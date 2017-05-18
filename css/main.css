@@ -1,0 +1,40 @@
+html, body, .start, .left, .right, .about {
+  height: 100%;
+}
+.left, .right, .about {
+  display : flex;
+  justify-content : center;
+  align-items : center;
+}
+.left, .right {
+  font-size: 3em;
+  background-size: cover;
+  background-position: center;
+}
+.left, .about {
+color : #FFF;
+}
+.left {
+  background-image:url("https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA18905-1920x1200.jpg");
+    background-color:#3d231b;
+}
+.right {
+  background-color:#FFF;
+  color : #3d231b;
+  background-image:url("https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1920x1200.jpg");
+}
+.left > p, .right > p {
+  background: orange;
+  padding: 3.5vw;
+}
+.about{
+  background-color:#000;
+}
+@media (max-width: 1200px) {
+  .left{
+    height:50%;
+  }
+  .right{
+    height:50%;
+  }
+}
