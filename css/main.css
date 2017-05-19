@@ -10,6 +10,13 @@ html, body, .start, .left, .right, .about {
   font-size: 3em;
   background-size: cover;
   background-position: center;
+  transition: hover .75s ease;
+}
+.left:hover {
+  box-shadow: inset -.3vh -.3vh 5vh #000;
+}
+.right:hover {
+  box-shadow: inset -.3vh -.3vh 5vh #444;
 }
 .left, .about {
 color : #FFF;
