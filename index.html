@@ -27,11 +27,132 @@
     </row>
   </section><!--END == split screen splash layout -->
   <section class="about">
+    <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" playsinline autoplay muted loop>
+  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+<source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm">
+<source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+</video>
+<p>
+      Created by:<br />Chad Trikyas mooney
+    </p>
+  </section>
+  <section class="content">
+<div id='tag-cloud'></div>
+  </section>
+  <div class="clear"></div>
+  <section class="about">
     <p>
       Created by:<br />Chad Trikyas mooney
     </p>
   </section>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="jquery.svg3dtagcloud.min.js"></script>
+  <script type="text/javascript" src="js/randomize_text.js"></script>
+  <script>
+
+      	$( document ).ready( function() {
+
+              var entries = [
+  { label: 'Chad Mooney', url: 'http://www.facebook.com/trikyas', target: '_top' },
+      { label: 'D3.js', url: 'https://d3js.org', target: '_top' },
+                  { label: 'Bootstrap', url: 'http://www.jqueryscript.net/tags.php?/Bootstrap/', target: '_top' },
+  { label: 'Reactive Animation Listener', url: 'http://zurb.com/playground/reactive-animation-listener', target: '_top' },
+              { label: 'Google Developers Web updates', url: 'https://developers.google.com/web/updates/', target: '_top' },
+                  { label: 'Dropdown Menu', url: 'http://www.jqueryscript.net/tags.php?/Drop%20Down%20Menu/', target: '_top' },
+                  { label: 'CodePen', url: 'http://codepen.io/', target: '_top' },
+                  { label: 'three.js', url: 'http://threejs.org/', target: '_top' },
+          { label: 'HTML5 Rocks', url: 'https://www.html5rocks.com/en/', target: '_top' },
+              { label: 'Google Web Tools', url: 'http://www.gwtproject.org', target: '_top' },
+                  { label: 'TinyPNG', url: 'https://tinypng.com/', target: '_top' },
+                  { label: 'Can I Use', url: 'http://caniuse.com/', target: '_top' },
+                  { label: 'URL shortener', url: 'https://goo.gl/', target: '_top' },
+          { label: 'Three.s Playground', url: 'http://threejsplaygnd.brangerbriz.net', target: '_top' },
+                  { label: 'Facebook', url: 'https://www.facebook.com/trikyas', target: '_top' },
+      { label: 'The Evolution of the Web', url: 'http://www.evolutionoftheweb.com', target: '_top' },
+                  { label: 'Gulp', url: 'http://gulpjs.com/', target: '_top' },
+                  { label: 'Browsersync', url: 'https://www.browsersync.io/', target: '_top' },
+                  { label: 'GitHub', url: 'https://github.com/', target: '_top' },
+                  { label: 'Shadertoy', url: 'https://www.shadertoy.com/', target: '_top' },
+              { label: 'Web Components', url: 'https://www.webcomponents.org', target: '_top' },
+                  { label: 'jsPerf', url: 'http://jsperf.com/', target: '_top' },
+                  { label: 'Foundation', url: 'http://foundation.zurb.com/', target: '_top' },
+                  { label: 'CreateJS', url: 'http://createjs.com/', target: '_top' },
+                  { label: 'Velocity.js', url: 'http://julian.com/research/velocity/', target: '_top' },
+                  { label: 'TweenLite', url: 'https://greensock.com/docs/#/HTML5/GSAP/TweenLite/', target: '_top' },
+                  { label: 'jQuery', url: 'https://jquery.com/', target: '_top' },
+          { label: 'Blocks - d3', url: 'https://bl.ocks.org', target: '_top' },
+          { label: 'Forge Hosting', url: 'https://getforge.com/#/', target: '_top' },
+          { label: 'Heroku', url: 'https://www.heroku.com', target: '_top'},
+      { label: 'Google Font Helper', url: 'https://google-webfonts-helper.herokuapp.com/fonts', target: '_top'},
+          { label: 'UNHEAP', url: 'http://www.unheap.com', target: '_top'},
+          { label: 'Windows Beta', url: 'https://insider.windows.com/', target: '_top'}
+
+              ];
+
+              var settings = {
+
+                  entries: entries,
+  width: 1439.4,
+  height: 788,
+                  radius: '65%',
+                  radiusMin: 75,
+                  bgDraw: true,
+              bgColor: '#111',
+                  opacityOver: 1.00,
+                  opacityOut: 0.05,
+                  opacitySpeed: 6,
+              fov: 800,
+  speed: .5,
+                  fontFamily: 'Oswald, Arial, sans-serif',
+                  fontSize: '15',
+                  fontColor: '#fff',
+                  fontWeight: 'normal',//bold
+                  fontStyle: 'normal',//italic
+                  fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                  fontToUpperCase: true
+
+              };
+
+              //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+              $( '#tag-cloud' ).svg3DTagCloud( settings );
+
+  		} );
+      var vid = document.getElementById("bgvid");
+      var pauseButton = document.querySelector("#polina button");
+
+      if (window.matchMedia('(prefers-reduced-motion)').matches) {
+          vid.removeAttribute("autoplay");
+          vid.pause();
+          pauseButton.innerHTML = "Paused";
+      }
+
+      function vidFade() {
+        vid.classList.add("stopfade");
+      }
+
+      vid.addEventListener('ended', function()
+      {
+      // only functional if "loop" is removed
+      vid.pause();
+      // to capture IE10
+      vidFade();
+      });
+
+
+      pauseButton.addEventListener("click", function() {
+        vid.classList.toggle("stopfade");
+        if (vid.paused) {
+          vid.play();
+          pauseButton.innerHTML = "Pause";
+        } else {
+          vid.pause();
+          pauseButton.innerHTML = "Paused";
+        }
+      })
+
+
+      </script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 html, body, .start, .left, .right, .about {
   height: 100%;
+  background-color: #000;
 }
 .left, .right, .about {
   display : flex;
@@ -14,6 +15,7 @@ html, body, .start, .left, .right, .about {
 }
 .left:hover {
   box-shadow: inset -.3vh -.3vh 5vh #000;
+  background-color: #2d2d2d;
 }
 .right:hover {
   box-shadow: inset -.3vh -.3vh 5vh #444;
@@ -28,7 +30,7 @@ background-color: #2d2d2d;
 background-color: #e7e5e4;
 }
 .about{
-  background-color:#000;
+  background-color: rgba(0,0,0,0.50);
 }
 @media (max-width: 1200px) {
   .left{
@@ -70,4 +72,25 @@ text-shadow: -1px -1px 1px #111, 2px 2px 1px #363636;
     opacity: 1;
     color: rgba(255, 0, 0, 0.5);
   }
+}
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ background: url('https://demosthenes.info/assets/images/polina.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.clear {
+  clear: both;
+  height: 2.5vh;
+}
+.content {
+  filter: drop-shadow(0 0 5vh black);
 }
